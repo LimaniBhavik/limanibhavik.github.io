@@ -1,0 +1,190 @@
+<!--- {
+  "preview": "default"
+}--->
+<!--
+  ## Introduction
+
+  This example shows how to integrate `amp-consent` in AMP Stories,
+  to offer users control over data sharing and cookies.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="http://1storiginal.com/amp/social-media-image-dimensions.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <title>What is Centralized and Decentralized Currency?</title>
+
+  <meta name="description" content="List of Social Media Image Dimension. Twitter, Skype, Facebook, LinkedIn, Google+ and more social media website profile picture, cover photo and other related to the social media graphics Dimension">
+  <meta name="url" content="http://bhaviklimbani.com/">
+  <link rel="icon" href="http://1storiginal.com/amp/assets/1stOriginalLogo.png" type="image/png">
+
+  <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+
+  <!-- ## Setup -->
+  <!-- Import the `amp-story` extension for creating an AMP Story... -->
+  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+
+  <!-- ... and the `amp-consent` extension. -->
+  <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+    * {
+      box-sizing: border-box;
+    }
+    amp-story * {
+      font-family: 'Helvitica Nueve', sans-serif;
+      color: white;
+    }
+    amp-story-page {
+      background: white;
+    }
+    amp-story h1 {
+      font-size: 46px;
+    }
+    amp-story h2 {
+      font-size: 36px;
+    }
+    amp-story p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .bold {
+      font-weight: bold;
+    }
+    .bottom {
+      align-content: end;
+    }
+    .medium {
+      font-weight: 600;
+    }
+    .last {
+      padding-bottom: 65px;
+    }
+    .center {
+      text-align: center;
+    }
+    .icon {
+      background-image: url(http://1storiginal.com/amp/assets/Logos.png);
+      background-repeat: no-repeat;
+      background-size: 100px 50px;
+      height: 50px;
+      object-fit: contain;
+      width: 100px;
+    }
+    .byline {
+      letter-spacing: 1.28px;
+      padding-bottom: 58px;
+    }
+  </style>
+</head>
+  <body>
+    <!-- ## Implementing User Consent inside an AMP Story 
+      
+   The `amp-consent` will display the logo specified by `publisher-logo-src` in the consent dialog.
+    -->
+    <amp-story standalone
+               title="Story Social Media Dimension"
+               publisher="1stOriginal.com"
+               poster-portrait-src="http://www.1storiginal.com/wp-content/uploads/2016/01/social-media.png"
+               publisher-logo-src="http://1storiginal.com/amp/assets/Logos.png">
+
+      <!--
+      The `amp-consent` component supports specifying a CORS endpoint via the `checkConsentHref` attribute, which the component queries via a POST request to determine if the consent UI specified for it needs to be shown. The response should look like this:
+      ```json
+      {
+        "promptIfUnknown": [true|false]
+      }
+      ```
+      The response will indicate if the consent needs to be shown or not. If it needs to be shown, the element with the id given in `promptUI` will be displayed. For AMP Stories, you can specify [consent title, message and a list of vendors](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories) inside a nested `amp-story-consent` element.
+      -->
+      <amp-consent id="myConsent" layout="nodisplay">
+        <script type="application/json">
+          {
+             "consents": {
+                "myConsent": {
+                   "checkConsentHref": "https://ampbyexample.com/samples_templates/consent/getConsent",
+                   "promptUI": "consentUI"
+                 }
+              }
+           }
+        </script>
+        <amp-story-consent id="consentUI" layout="nodisplay">
+          <script type="application/json">
+            {
+              "title": "What is Centralized and Decentralized currency?",
+              "message": "What is Centralized and Decentralized currency?, This is an experimental website you can visit us at - http://1storiginal.com",
+              "vendors": ["bhavik limbani"]
+            }
+          </script>
+        </amp-story-consent>
+      </amp-consent>
+
+      <amp-story-page id="page-1">
+        <amp-story-grid-layer template="fill">
+          <amp-img width="400" height="750" layout="fill" src="http://1storiginal.com/amp/assets/social-media-image-dimension-amp-banner.png"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="bottom">
+          <div class="icon"></div>
+          <h1 class="bold">What is Centralized and Decentralized currency?</h1>
+          <p class="byline">By Bhavik Limbani</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+
+      <amp-story-page id="page-2">
+        <amp-story-grid-layer template="fill">
+          <amp-img width="400" height="750" layout="fill" src="https://pbs.twimg.com/media/Db2l-p_X0AEu2aU.jpg"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="bottom">
+          <h2 class="bold">CENTRALIZED CURRENCY</h2>
+          <p class="last">A centralized currency requires the presence of a centralized party validating all transactions such as RBI being the central point of authority for all banks.</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+      
+      <amp-story-page id="page-3">
+        <amp-story-grid-layer template="fill">
+          <amp-img width="400" height="750" layout="fill" src="https://assets.wordpress.envato-static.com/uploads/2018/01/image3.png"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="bottom">
+          <h2 class="bold">DECENTRALIZED CURRENCY</h2>
+          <p class="last">Bitcoin is a decentralized currency where there is no necessity of a third party validating your transaction.</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+      
+      <amp-story-page id="page-4">
+        <amp-story-grid-layer template="fill">
+          <amp-img width="400" height="750" layout="fill" src="https://assets.wordpress.envato-static.com/uploads/2018/01/image3.png"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="bottom">
+          <h2 class="bold">PROS OF DECENTRALIZED CURRENCY</h2>
+          <p class="last"><li>Prevents counterfeiting</li><li>Speed</li><li>High acceptance</li><li>Decreased cost of cash</li><li>Volatility</li></p>
+        </amp-story-grid-layer>
+      </amp-story-page>       
+
+      <amp-story-page id="page-5">
+        <amp-story-grid-layer template="fill">
+          <amp-img width="400" height="750" layout="fill" src="https://img.getbg.net/upload/full/11/573546_oboi_tsvet_svet_fon_1920x1080_(www.GetBg.net).jpg"></amp-img>
+        </amp-story-grid-layer>
+        <amp-story-grid-layer template="vertical" class="bottom">
+          <h2 class="bold">CONS OF DECENTRALIZED CURRENCY</h2>
+          <p class="last"><li>Centralized</li><li>Security</li><li>Permissioned</li><li>Anonymity</li></p>
+        </amp-story-grid-layer>
+      </amp-story-page> 
+
+    </amp-story>
+
+    <!-- ## Demo: `amp-consent` inside an `amp-story`
+     
+    The consent dialog will be shown as an overlay when the story starts.
+     <div class="abe-story-preview">
+        <amp-iframe media="(min-width: 650px)"
+            src="/stories/user_consent/story_user_consent/preview/embed/"
+            width="440" height="732" sandbox="allow-scripts allow-popups allow-same-origin">
+          <div placeholder></div>
+        </amp-iframe>
+      </div> -->
+  </body>
+</html>
