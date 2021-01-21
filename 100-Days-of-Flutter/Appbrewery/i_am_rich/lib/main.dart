@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
-}
+  // variable to change the state true/false condition and call
+  bool isSelected = true;
 
+  runApp(
+    MaterialApp(
+      home: Center(
+        child: Text('Hello World!'),
+      ),
+    ),
+  );
+}
