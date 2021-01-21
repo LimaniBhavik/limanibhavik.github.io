@@ -1,65 +1,54 @@
 import 'package:flutter/material.dart';
 
-// create widget for icon and text in the row
+// stateful & stateless
 
-void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Hello Rect!'),
-        ),
-        body: HelloWidget(),
-      ),
-    ),
-  );
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
 }
 
-class HelloWidget extends StatelessWidget {
-  get color => null;
+class MyHomePage extends StatefulWidget {
+  MyHomePage();
+  @override
+  createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
 
   @override
-  // widget create
   Widget build(BuildContext context) {
-    assert(debugCheckHasMaterial(context));
-    var iconLocation;
-    var name='hello';
-    var _rowHeight;
-    var _borderRadius;
-    return Material(
-      color: Colors.transparent,
-      child: Container(
-        height: _rowHeight,
-        child: InkWell(
-          borderRadius: _borderRadius,
-          highlightColor: color[50],
-          splashColor: color[100],
-
-          onTap: (){
-            print('I waa tapped!');
-          },
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Padding(
-                    padding: EdgeInsets.only(right: 16.0),
-                    child: iconLocation != null ? Icon(Icons.cake),
+    return Scaffold(
+      backgroundColor: Colors.greenAccent,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Center(
+              child: Text(
+                'You have pushed the button this many times:',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
                 ),
-                Center(
-                  child: Text(
-                    name,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.display1,
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
-
+            Text(
+              '$_counter',
+            ),
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () { _counter++; },
+        child: Icon(Icons.add),
       ),
     );
   }
