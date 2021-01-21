@@ -1,2 +1,1 @@
-# bhaviklimbani.com
-Personal Website
+# Welcome to my Portfolio
