@@ -36,7 +36,7 @@ class _DicePageState extends State<DicePage> {
                   changes();
                 });
               },
-              child: Image.asset('images/dice$leftDiceNumber.png'),
+              child: Image.asset('images/$leftDiceNumber.png'),
             ),
           ),
           Expanded(
@@ -46,7 +46,16 @@ class _DicePageState extends State<DicePage> {
                   changes();
                 });
               },
-              child: Image.asset('images/dice$rightDiceNumber.png'),
+              child: Text(
+                '$leftDiceNumber',
+                style: TextStyle(
+                  color: Colors.white,
+                  decoration: TextDecoration.underline,
+                  fontSize: 150,
+                  decorationColor: Colors.red,
+                  decorationStyle: TextDecorationStyle.wavy,
+                ),
+              ),
             ),
           ),
         ],
