@@ -61,7 +61,7 @@ MAC APPS FOR WRITERS
 
 <h3>STATIONERY</h3>
 <ul>  <li>GALEN LEATHER – beautiful leather traveler’s notebooks, pen cases, notebook covers and more. Receive 10% off your order when you use THIS REFERRAL LINK.</li>
-  <li>CULTPENS – I order most of my fountain pens from CultPens in the UK. My go-to pens are the Kaweco Sport, Conklin Duragraph and Pilot Penmanship.</li
+  <li>CULTPENS – I order most of my fountain pens from CultPens in the UK. My go-to pens are the Kaweco Sport, Conklin Duragraph and Pilot Penmanship.</li>
   <li>PAPERCHASE – I love Paperchase padfolios!</li>
 </ul>
 
